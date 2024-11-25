@@ -2,49 +2,38 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles.css">
 
-    <title>Projeto</title>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
+    <title>Acompanhamento de Progressões</title>
+</head>
 <body>
-     <!-- Cabeçalho de informações do sistema -->
-    <header>
-        <div class="title">
-            <h1>Lista de Compras</h1>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="" alt="Logo" />
+            </a>
         </div>
-        <div class="banner">
-            <img src="https://images.contentstack.io/v3/assets/blt45c082eaf9747747/bltbcca43584b660977/5de0b6aa703bd50385f981ad/Header-5.jpg?width=1200&height=630&fit=crop"
-                alt="y">
-        </div>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#progressoes">Progressões</a>
+                </li>
+                <li>
+                    <a href="#jovens">Jovens</a>
+                </li>
+                <li>
+                    <a href="#matriz">Matriz Progressões</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-     <!-- Opções para adicionar um novo item -->
-    <section class="newItem">
-        <input type="text" id="newInput" placeholder="Adicionar novo item:">
-        <input type="text" id="newQuantity" placeholder="Quantidade:">
-        <input type="text" id="newPrice" placeholder="Valor:">
-        <button onclick="newItem()" class="addBtn">Adicionar</button>
-    </section>
-
-    <!-- Tabela com items existentes -->
-    <section class="items">
-        <table id="myTable">
-            <tr>
-                <th>Nome</th>
-                <th>Quantidade</th>
-                <th>Valor</th>
-                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
-            </tr>
-        </table>
-    </section>
-
-    <script src="scripts.js"></script>
+    
 </body>
-
 </html>
-
-
