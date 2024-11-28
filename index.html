@@ -34,6 +34,29 @@
         </nav>
     </header>
 
+        <!-- Opções para adicionar um novo item -->
+        <section class="newProgression">
+            <input type="text" id="newCode" placeholder="Código no mAPPa:">
+            <input type="text" id="newText" placeholder="Texto da progressão:">
+            <input type="text" id="newBranch" placeholder="Ramo:">            
+            <input type="text" id="newPhase" placeholder="Etapa:">
+
+            <button onclick="newItem()" class="addBtn">Adicionar</button>
+        </section>
+    
+        <!-- Tabela com items existentes -->
+        <section class="items">
+            <table id="myTable">
+                <tr>
+                    <th>Nome</th>
+                    <th>Quantidade</th>
+                    <th>Valor</th>
+                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                </tr>
+            </table>
+        </section>
+    
+
     
 </body>
 </html>
