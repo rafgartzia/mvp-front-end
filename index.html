@@ -34,13 +34,49 @@
         </nav>
     </header>
 
-        <!-- Opções para adicionar um novo item -->
-        <section class="newProgression">
-            <input type="text" id="newCode" placeholder="Código no mAPPa:">
-            <input type="text" id="newText" placeholder="Texto da progressão:">
-            <input type="text" id="newBranch" placeholder="Ramo:">            
-            <input type="text" id="newPhase" placeholder="Etapa:">
 
+        <section class="newProgression">
+            <h1>Incluir Progressão</h1>
+            <div class="progression">
+                <label for="newCode">Código no mAPPa:</label>
+                <input type="text" id="newCode" size= 4 minlength="2" maxlength="2" required>
+                <br><br>
+                <label for="newText">Texto da progressão:</label>
+                <input type="text" id="newText" size= 100 minlength="10" maxlength="100" required>
+            </div>
+            <div class="branchphase">
+                <div class="proglobinho">
+                    <label class="progtitle">Ramo Lobinho</label><br>
+                    <input type="radio" id="ramolobinho1" name="newBranchandPhase" value="lobinho1">
+                    <label for="ramolobinho1">Pata Tenra</label><br>
+                    <input type="radio" id="ramolobinho2" name="newBranchandPhase" value="lobinho2">
+                    <label for="ramolobinho2">Lobo Saltador</label><br>
+                    <input type="radio" id="ramolobinho3" name="newBranchandPhase" value="lobinho3">
+                    <label for="ramolobinho3">Lobo Caçador</label><br>
+                    <input type="radio" id="ramolobinho" name="newBranchandPhase" value="lobinho4">
+                    <label for="ramolobinho4">Lobo Rastreador</label>
+                </div>
+                    <div class="progescoteiro">
+                    <label class="progtitle">Ramo Escoteiro</label><br>
+                    <input type="radio" id="ramoescoteiro1" name="newBranchandPhase" value="escoteiro1">
+                    <label for="ramoescoteiro1">Pistas</label><br>
+                    <input type="radio" id="ramoescoteiro2" name="newBranchandPhase" value="escoteiro2">
+                    <label for="ramoescoteiro2">Trilha</label><br>
+                    <input type="radio" id="ramoescoteiro3" name="newBranchandPhase" value="escoteiro3">
+                    <label for="ramoescoteiro3">Rumo</label><br>
+                    <input type="radio" id="ramoescoteiro4" name="newBranchandPhase" value="escoteiro4">
+                    <label for="ramoescoteiro4">Travessia</label>
+                </div>
+                <div class="progsenior">
+                    <label class="progtitle">Ramo Senior</label><br>
+                    <input type="radio" id="ramosenior1" name="newBranchandPhase" value="senior1">
+                    <label for="ramosenior1">Escalada</label><br>
+                    <input type="radio" id="ramosenior2" name="newBranchandPhase" value="senior2">
+                    <label for="ramosenior2">Conquista</label><br>
+                    <input type="radio" id="ramosenior3" name="newBranchandPhase" value="senior3">
+                    <label for="ramosenior3">Azimute</label>
+                </div>   
+            </div>
             <button onclick="newItem()" class="addBtn">Adicionar</button>
         </section>
     

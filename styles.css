@@ -25,17 +25,6 @@ body {
     height: 100%;
 }
 
-.menu-toggle {
-    float: right;
-    color: #eee;
-    background-color: #555;
-    border: solid 1px #777;
-    border-radius: 5px;
-    height: 40px;
-    padding: 10px 20px;
-    margin: 20px 15px;
-}
-
 .menu {
     display: inline-block;
     vertical-align: top;
@@ -64,44 +53,44 @@ body {
     padding: 15px;
 }
 
-.autenticacao {
-    float: right;
-    height: 80px0;
-    padding: 25px;
-}
-
 .menu a:hover,
 .menu a.selected {
     background-color: #4faddb;
     color: #000;
 }
 
-.botao {
-    border-radius: 30px;
-    padding: 10px 25px;
-    margin: 10px;
+.branchphase{
+    display: flex;
 }
 
-.destaque {
-    background: #f50a31;
-    color: #fff;
+.progression {
+    margin: 20px;
+    padding: 20px;
+    background-color: #bbb;
+    border-radius: 10px;
 }
 
-@media(min-width: 679px){
-    .menu-toggle{
-        display: none;
-    }
+.proglobinho {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffd23f;
+    border-radius: 10px;
 }
 
-@media(max-width: 680px){
-    .menu {
-        display: none;
-    }
+.progescoteiro {
+    margin: 20px;
+    padding: 20px;
+    background-color: #548c2f;
+    border-radius: 10px;
 }
 
-@media(max-width: 910px){
-    .autenticacao {
-        display: none;
-    }
+.progsenior {
+    margin: 20px;
+    padding: 20px;
+    background-color: #eb4511;
+    border-radius: 10px;
 }
 
+.progtitle {
+    font-weight: bold;
+}
