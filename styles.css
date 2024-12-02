@@ -49,6 +49,12 @@ body {
 
 }
 
+.banner img {
+    margin-top: 5px;
+    display: inline-block;
+    height: 150px;
+}
+
 .menu a {
     padding: 15px;
 }
@@ -66,28 +72,28 @@ body {
 .progression {
     margin: 20px;
     padding: 20px;
-    background-color: #bbb;
+    background-color: #ccc;
     border-radius: 10px;
 }
 
 .proglobinho {
     margin: 20px;
     padding: 20px;
-    background-color: #ffd23f;
+    background-color: #bbb;
     border-radius: 10px;
 }
 
 .progescoteiro {
     margin: 20px;
     padding: 20px;
-    background-color: #548c2f;
+    background-color: #bbb;
     border-radius: 10px;
 }
 
 .progsenior {
     margin: 20px;
     padding: 20px;
-    background-color: #eb4511;
+    background-color: #bbb;
     border-radius: 10px;
 }
 

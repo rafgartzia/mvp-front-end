@@ -14,11 +14,6 @@
 </head>
 <body>
     <header class="cabecalho">
-        <div class="logo">
-            <a href="#inicio">
-                <img src="" alt="Logo" />
-            </a>
-        </div>
         <nav class="menu">
             <ul>
                 <li>
@@ -32,8 +27,26 @@
                 </li>
             </ul>
         </nav>
+        <div class="banner">
+            <img src="img/bannerlobinho.png" alt="y">
+            <img src="img/bannerescoteiro.png" alt="y">
+            <img src="img/bannersenior.png" alt="y">
+            <img src="img/bannerpioneiro.png" alt="y">
+        </div>
     </header>
 
+        <!-- Tabela com items existentes -->
+        <section class="progressions">
+            <table id="progTable">
+                <tr>
+                    <th>Código</th>
+                    <th>Descrição</th>
+                    <th>Ramo</th>
+                    <th>Etapa</th>
+                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+                </tr>
+            </table>
+        </section>
 
         <section class="newProgression">
             <h1>Incluir Progressão</h1>
@@ -41,7 +54,7 @@
                 <label for="newCode">Código no mAPPa:</label>
                 <input type="text" id="newCode" size= 4 minlength="2" maxlength="2" required>
                 <br><br>
-                <label for="newText">Texto da progressão:</label>
+                <label for="newText">Descrição:</label>
                 <input type="text" id="newText" size= 100 minlength="10" maxlength="100" required>
             </div>
             <div class="branchphase">
@@ -79,20 +92,6 @@
             </div>
             <button onclick="newItem()" class="addBtn">Adicionar</button>
         </section>
-    
-        <!-- Tabela com items existentes -->
-        <section class="items">
-            <table id="myTable">
-                <tr>
-                    <th>Nome</th>
-                    <th>Quantidade</th>
-                    <th>Valor</th>
-                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
-                </tr>
-            </table>
-        </section>
-    
-
     
 </body>
 </html>
