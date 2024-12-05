@@ -8,61 +8,16 @@ body {
     background-color: lightgray;
 } 
 
-.cabecalho {
-    background: #333;
-    border-bottom: solid 5px #4faddb;
-    height: 80px;
-    box-sizing: content-box;
-}
-
-.logo {
-    display: inline-block;
-    height: 80px;
-    padding: 15px;
-}
-
-.logo img {
-    height: 100%;
-}
-
-.menu {
-    display: inline-block;
-    vertical-align: top;
-    height: 80px;
-    padding: 25px;
-
-}
-
-.menu ul {
-    margin: 0;
-    padding: 0;
-}
-
-.menu li {
-    display: inline-block;
-}
-
-.cabecalho a {
-    text-decoration: none;
-    color: #eee;
-    font-size: 1.3em;
-
+.banner {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 10px;
 }
 
 .banner img {
-    margin-top: 5px;
-    display: inline-block;
-    height: 150px;
-}
-
-.menu a {
-    padding: 15px;
-}
-
-.menu a:hover,
-.menu a.selected {
-    background-color: #4faddb;
-    color: #000;
+    height: 100px;
 }
 
 .branchphase{
