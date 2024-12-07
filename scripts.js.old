@@ -4,13 +4,13 @@
   --------------------------------------------------------------------------------------
 */
 const getList = async () => {
-  let url = 'http://127.0.0.1:5000/progressoes';
+  let url = 'http://127.0.0.1:5000/produtos';
   fetch(url, {
     method: 'get',
   })
     .then((response) => response.json())
     .then((data) => {
-      data.progressoes.forEach(item => insertList(item.cod_mapa, item.texto, item.ramo, item.etapa))
+      data.produtos.forEach(item => insertList(item.nome, item.quantidade, item.valor))
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -69,7 +69,7 @@ const insertButton = (parent) => {
 */
 const removeElement = () => {
   let close = document.getElementsByClassName("close");
-  // let table = document.getElementById('myTable');
+  // var table = document.getElementById('myTable');
   let i;
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
@@ -127,29 +127,19 @@ const newItem = () => {
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
-const insertList = (code, description, branch, phase) => {
-  let item = [code, description, branch, phase]
-  let table = document.getElementById('progTable');
-  let row = table.insertRow();
+const insertList = (nameProduct, quantity, price) => {
+  var item = [nameProduct, quantity, price]
+  var table = document.getElementById('myTable');
+  var row = table.insertRow();
 
-  for (let i = 0; i < item.length; i++) {
-    let cel = row.insertCell(i);
+  for (var i = 0; i < item.length; i++) {
+    var cel = row.insertCell(i);
     cel.textContent = item[i];
   }
   insertButton(row.insertCell(-1))
-  document.getElementById("newCode").value = "";
-  document.getElementById("newText").value = "";
-  document.getElementById("ramolobinho1").value = "";
-  document.getElementById("ramolobinho2").value = "";
-  document.getElementById("ramolobinho3").value = "";
-  document.getElementById("ramolobinho4").value = "";
-  document.getElementById("ramoescoteiro1").value = "";
-  document.getElementById("ramoescoteiro2").value = "";
-  document.getElementById("ramoescoteiro3").value = "";
-  document.getElementById("ramoescoteiro4").value = "";
-  document.getElementById("ramosenior1").value = "";
-  document.getElementById("ramosenior2").value = "";
-  document.getElementById("ramosenior3").value = "";
+  document.getElementById("newInput").value = "";
+  document.getElementById("newQuantity").value = "";
+  document.getElementById("newPrice").value = "";
 
   removeElement()
 }
