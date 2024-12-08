@@ -51,10 +51,56 @@ body {
     border-radius: 10px;
 }
 
-label {
-    padding-left: 10px;
-    padding-right: 10px;
+#newDescription {
+    width: 80%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
+
+#newCode {
+    width: 5%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#newBranch {
+    width: 10%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#newPhase {
+    width: 20%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+label {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
 .addProgBtn {
     padding: 9px 10px;
     background-color: #999;

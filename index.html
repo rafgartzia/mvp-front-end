@@ -28,7 +28,7 @@
             <label for="newCode">Código:</label>
             <input type="text" inputmode="numeric" id="newCode" size="3" minlength="1" maxlength="3" required>
             <label for="newDescription">Descrição:</label>
-            <input type="text" id="newDescription" size="100" minlength="10" maxlength="350" required>
+            <input type="text" id="newDescription" minlength="10" maxlength="350" required>
         </div>
         <div class="progbranchphase"> 
             <label for="newBranch">Ramo:</label>
@@ -47,8 +47,11 @@
                 <option value="Conquista">Conquista</option>
                 <option value="Azimute">Azimute</option>
             </select>
-        </div>              
-        <button onclick="newItem()" class="addProgBtn">Adicionar progressão</button>
+        </div>
+        <div class="btn">
+            <button onclick="newItem()" class="addProgBtn">Adicionar progressão</button>
+        </div>             
+        
     </section>
     
     <!-- Tabela com items existentes -->
