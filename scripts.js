@@ -25,6 +25,8 @@ const getList = async () => {
 getList()
 
 
+
+
 /*
   --------------------------------------------------------------------------------------
   Função para colocar um item na lista do servidor via requisição POST
