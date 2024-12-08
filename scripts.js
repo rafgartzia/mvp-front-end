@@ -112,14 +112,22 @@ const newItem = () => {
   let inputCode = document.getElementById("newCode").value;
   let inputDescription = document.getElementById("newDescription").value;
 
+  let newBranchAndPhase = getBranchAndPhase();
+  console.log("value: ", newBranchAndPhase)
+  //let inputBranch = newBranchAndPhase[0]
+  //let inputPhase = newBranchAndPhase[1]
 
-  if (inputProduct === '') {
-    alert("Escreva o nome de um item!");
-  } else if (isNaN(inputQuantity) || isNaN(inputPrice)) {
-    alert("Quantidade e valor precisam ser números!");
+
+  if (isNaN(inputCode)) {
+    alert("Entre com o código da progressão!");
+  } else if (inputDescription ===''){
+    alert("Entre com a descrição da progressão!")
+  } else if (newBranchAndPhase ===''){
+    alert("Selecione um Ramo/Etapa")
   } else {
-    insertList(inputProduct, inputQuantity, inputPrice)
-    postItem(inputProduct, inputQuantity, inputPrice)
+    console.log(inputCode, inputDescription, inputBranch, inputPhase)
+    //insertList(inputProduct, inputQuantity, inputPrice)
+    //postItem(inputProduct, inputQuantity, inputPrice)
     alert("Item adicionado!")
   }
 }
@@ -129,17 +137,22 @@ const newItem = () => {
   Função para retonrae os valores Ramo e Etapa conforme radio button selecionado
   --------------------------------------------------------------------------------------
 */
-const branchPhase = () => {
+const getBranchAndPhase = function () {
   let radioList = document.getElementsByName('newBranchAndPhase');
   radioList.forEach((radio) => {
     if(radio.checked){
       let str1 = radio.value
-      return str1.split("/")
+      console.log("ok!")
+      str1.split("/")
     }
   })
 }
 
-
+const teste = () => {
+  console.log("teste chamado")
+  console.log(getBranchAndPhase())
+}
+ 
 /*
   --------------------------------------------------------------------------------------
   Função para inserir items na lista apresentada
