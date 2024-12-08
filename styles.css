@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: lightgray;
+    background-color: #ccd5ae;
 } 
 
 .banner {
@@ -14,48 +14,53 @@ body {
     align-items: center;
     justify-content: space-around;
     flex: 10px;
+    background-color: #e9edc9;
+    border-radius: 20px;
 }
 
 .banner img {
+    padding: 10px;
     height: 100px;
 }
 
-.branchphase{
-    display: flex;
+.titleprog{
+    padding: 5px;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #fefae0;
+    text-align: center;
+}
+
+.titleprogtable{
+    padding: 5px;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: #fefae0;
+    text-align: center;
 }
 
 .progression {
     margin: 20px;
     padding: 20px;
-    background-color: #ccc;
+    background-color: #faedcd;
     border-radius: 10px;
 }
 
-.proglobinho {
-    margin: 20px;
-    padding: 20px;
-    background-color: #bbb;
+.addProgBtn {
+    padding: 9px 10px;
+    background-color: #999;
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
     border-radius: 10px;
 }
 
-.progescoteiro {
-    margin: 20px;
-    padding: 20px;
-    background-color: #bbb;
-    border-radius: 10px;
+.addProgBtn:hover {
+    background-color: #2ab53a;
+    color: white;
 }
-
-.progsenior {
-    margin: 20px;
-    padding: 20px;
-    background-color: #bbb;
-    border-radius: 10px;
-}
-
-.progtitle {
-    font-weight: bold;
-}
-
 table,
 th,
 td {
@@ -71,14 +76,15 @@ td {
 }
 
 table{
-    background-color: white;
+    background-color: #d4a373;
     width: 90%;
 }
 
 tr:nth-child(odd){
-    background-color: #eee;
+    background-color: #a4a373;
 }
 
 tr:hover {
-    background: rgb(200, 199, 199);
+    background-color: #ccc;
 }
+
