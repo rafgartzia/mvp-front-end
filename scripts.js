@@ -13,7 +13,7 @@ const getList = async () => {
       data.progressoes.forEach(item => insertList(item.cod_mapa, item.texto, item.ramo, item.etapa))
     })
     .catch((error) => {
-      console.error('Error:', error);
+      console.error('Erro ao tentar recuperar as informações do servidor:', error);
     });
 }
 
@@ -42,9 +42,13 @@ const includeProg = async (inputCode, inputDescription, inputBranch, inputPhase)
     method: 'post',
     body: formData
   })
-    .then((response) => console.log(response.json()))
+    .then((response) => {
+        if(response.status == 200){
+            insertList(inputCode, inputDescription, inputBranch, inputPhase) 
+        }
+    })
     .catch((error) => {
-      console.error('Error:', error);
+      console.error('Erro ao tentar inserir progressão:', error);
     });
 }
 
@@ -75,10 +79,10 @@ const removeElement = () => {
   for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
       let div = this.parentElement.parentElement;
-      const nomeItem = div.getElementsByTagName('td')[0].innerHTML
+      const cod_mapa = div.getElementsByTagName('td')[0].innerHTML
       if (confirm("Você tem certeza?")) {
         div.remove()
-        deleteItem(nomeItem)
+        deleteItem(cod_mapa)
         alert("Removido!")
       }
     }
@@ -92,7 +96,7 @@ const removeElement = () => {
 */
 const deleteItem = (item) => {
   console.log(item)
-  let url = 'http://127.0.0.1:5000/produto?nome=' + item;
+  let url = 'http://127.0.0.1:5000/progressao?cod_mapa=' + item;
   fetch(url, {
     method: 'delete'
   })
@@ -119,8 +123,7 @@ const newItem = () => {
     alert('Preencher os valores requeridos!!')
   } else {
         //console.log("teste: ", inputCode, inputDescription, inputBranch, inputPhase)
-        includeProg(inputCode, inputDescription, inputBranch, inputPhase)
-        insertList(inputCode, inputDescription, inputBranch, inputPhase)      
+        includeProg(inputCode, inputDescription, inputBranch, inputPhase)  
     }
 }
 

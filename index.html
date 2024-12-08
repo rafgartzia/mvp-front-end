@@ -29,7 +29,7 @@
             <input type="text" inputmode="numeric" id="newCode" size="2">
             <br><br>
             <label for="newDescription">Descrição:</label>
-            <input type="text" id="newDescription" size= 100 minlength="10" maxlength="200">
+            <input type="text" id="newDescription" size= 100 minlength="10" maxlength="350">
             <br><br>
             <label for="newBranch">Ramo:</label>
             <select name= "newBranch" id="newBranch">
@@ -39,19 +39,15 @@
             </select>
             <label for="newPhase">Etapa:</label>
             <select name= "newPhase" id="newPhase">
-                <option value="Pata Tenra">Pata Tenra</option>
-                <option value="Lobo Saltador">Lobo Saltador</option>
-                <option value="Lobo Caçador">Lobo Caçador</option>
-                <option value="Lobo Rastreador">Lobo Rastreador</option>
-                <option value="Pistas">Pistas</option>
-                <option value="Trilha">Trilha</option>
-                <option value="Rumo">Rumo</option>
-                <option value="Travessia">Travessia</option>
+                <option value="Pata Tenra/Saltador">Pata Tenra e Lobo Saltador</option>
+                <option value="Rastreador/Caçador">Lobo Rastreador e Lobo caçador</option>
+                <option value="Pista/Trilha">Pista e Trilha</option>
+                <option value="Rumo/Travessia">Rumo e Travessia</option>
                 <option value="Escalada">Escalada</option>
                 <option value="Conquista">Conquista</option>
                 <option value="Azimute">Azimute</option>
             </select>
-                    
+        <br><br>            
         <button onclick="newItem()" class="addBtn">Adicionar</button>
         </div>
     </section>
