@@ -109,9 +109,9 @@ const deleteItem = (item) => {
   --------------------------------------------------------------------------------------
 */
 const newItem = () => {
-  let inputProduct = document.getElementById("newInput").value;
-  let inputQuantity = document.getElementById("newQuantity").value;
-  let inputPrice = document.getElementById("newPrice").value;
+  let inputCode = document.getElementById("newCode").value;
+  let inputDescription = document.getElementById("newDescription").value;
+
 
   if (inputProduct === '') {
     alert("Escreva o nome de um item!");
@@ -123,6 +123,22 @@ const newItem = () => {
     alert("Item adicionado!")
   }
 }
+
+/*
+  --------------------------------------------------------------------------------------
+  Função para retonrae os valores Ramo e Etapa conforme radio button selecionado
+  --------------------------------------------------------------------------------------
+*/
+const branchPhase = () => {
+  let radioList = document.getElementsByName('newBranchAndPhase');
+  radioList.forEach((radio) => {
+    if(radio.checked){
+      let str1 = radio.value
+      return str1.split("/")
+    }
+  })
+}
+
 
 /*
   --------------------------------------------------------------------------------------
