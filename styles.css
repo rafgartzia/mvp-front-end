@@ -6,6 +6,8 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #ccd5ae;
+    display: flex;
+    flex-direction: column;
 } 
 
 .banner {
@@ -39,13 +41,20 @@ body {
     text-align: center;
 }
 
-.progression {
+.progcodetext,
+.progbranchphase {
+    display: flex;
+    justify-content: start;
     margin: 20px;
     padding: 20px;
     background-color: #faedcd;
     border-radius: 10px;
 }
 
+label {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .addProgBtn {
     padding: 9px 10px;
     background-color: #999;
@@ -61,6 +70,8 @@ body {
     background-color: #2ab53a;
     color: white;
 }
+
+
 table,
 th,
 td {
@@ -88,3 +99,11 @@ tr:hover {
     background-color: #ccc;
 }
 
+input:valid {
+    background-color: palegreen;
+  }
+  
+  input:invalid {
+    background-color: lightpink;
+  }
+  
