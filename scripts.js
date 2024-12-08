@@ -1,6 +1,6 @@
 /*
   --------------------------------------------------------------------------------------
-  Função para obter a lista existente do servidor via requisição GET
+  Função para obter as progressões existentes no servidor via requisição GET
   --------------------------------------------------------------------------------------
 */
 const getList = async () => {
@@ -25,25 +25,24 @@ const getList = async () => {
 getList()
 
 
-
-
 /*
   --------------------------------------------------------------------------------------
-  Função para colocar um item na lista do servidor via requisição POST
+  Função para cadastrar uma progressão no servidor via requisição POST
   --------------------------------------------------------------------------------------
 */
-const postItem = async (inputProduct, inputQuantity, inputPrice) => {
+const includeProg = async (inputCode, inputDescription, inputBranch, inputPhase) => {
   const formData = new FormData();
-  formData.append('nome', inputProduct);
-  formData.append('quantidade', inputQuantity);
-  formData.append('valor', inputPrice);
+  formData.append('cod_mapa', inputCode);
+  formData.append('texto', inputDescription);
+  formData.append('ramo', inputBranch);
+  formData.append('etapa', inputPhase);
 
-  let url = 'http://127.0.0.1:5000/produto';
+  let url = 'http://127.0.0.1:5000/progressao';
   fetch(url, {
     method: 'post',
     body: formData
   })
-    .then((response) => response.json())
+    .then((response) => console.log(response.json()))
     .catch((error) => {
       console.error('Error:', error);
     });
@@ -105,60 +104,34 @@ const deleteItem = (item) => {
 
 /*
   --------------------------------------------------------------------------------------
-  Função para adicionar um novo item com nome, quantidade e valor 
+  Função para adicionar uma nova progressão
   --------------------------------------------------------------------------------------
 */
 const newItem = () => {
   let inputCode = document.getElementById("newCode").value;
   let inputDescription = document.getElementById("newDescription").value;
+  let inputBranch = document.getElementById("newBranch").value;
+  let inputPhase = document.getElementById("newPhase").value;
 
-  let newBranchAndPhase = getBranchAndPhase();
-  console.log("value: ", newBranchAndPhase)
-  //let inputBranch = newBranchAndPhase[0]
-  //let inputPhase = newBranchAndPhase[1]
+  //console.log("teste: ", inputCode, inputDescription, inputBranch, inputPhase)
 
-
-  if (isNaN(inputCode)) {
-    alert("Entre com o código da progressão!");
-  } else if (inputDescription ===''){
-    alert("Entre com a descrição da progressão!")
-  } else if (newBranchAndPhase ===''){
-    alert("Selecione um Ramo/Etapa")
+  if((inputCode === '')||(inputDescription === '')||(inputBranch === '')||(inputPhase === '')){
+    alert('Preencher os valores requeridos!!')
   } else {
-    console.log(inputCode, inputDescription, inputBranch, inputPhase)
-    //insertList(inputProduct, inputQuantity, inputPrice)
-    //postItem(inputProduct, inputQuantity, inputPrice)
-    alert("Item adicionado!")
-  }
-}
-
-/*
-  --------------------------------------------------------------------------------------
-  Função para retonrae os valores Ramo e Etapa conforme radio button selecionado
-  --------------------------------------------------------------------------------------
-*/
-const getBranchAndPhase = function () {
-  let radioList = document.getElementsByName('newBranchAndPhase');
-  radioList.forEach((radio) => {
-    if(radio.checked){
-      let str1 = radio.value
-      console.log("ok!")
-      str1.split("/")
+        //console.log("teste: ", inputCode, inputDescription, inputBranch, inputPhase)
+        includeProg(inputCode, inputDescription, inputBranch, inputPhase)
+        insertList(inputCode, inputDescription, inputBranch, inputPhase)      
     }
-  })
 }
 
-const teste = () => {
-  console.log("teste chamado")
-  console.log(getBranchAndPhase())
-}
- 
 /*
   --------------------------------------------------------------------------------------
   Função para inserir items na lista apresentada
   --------------------------------------------------------------------------------------
 */
+
 const insertList = (code, description, branch, phase) => {
+
   let item = [code, description, branch, phase]
   let table = document.getElementById('progTable');
   let row = table.insertRow();
@@ -169,18 +142,7 @@ const insertList = (code, description, branch, phase) => {
   }
   insertButton(row.insertCell(-1))
   document.getElementById("newCode").value = "";
-  document.getElementById("newText").value = "";
-  document.getElementById("ramolobinho1").value = "";
-  document.getElementById("ramolobinho2").value = "";
-  document.getElementById("ramolobinho3").value = "";
-  document.getElementById("ramolobinho4").value = "";
-  document.getElementById("ramoescoteiro1").value = "";
-  document.getElementById("ramoescoteiro2").value = "";
-  document.getElementById("ramoescoteiro3").value = "";
-  document.getElementById("ramoescoteiro4").value = "";
-  document.getElementById("ramosenior1").value = "";
-  document.getElementById("ramosenior2").value = "";
-  document.getElementById("ramosenior3").value = "";
+  document.getElementById("newDescription").value = "";
 
   removeElement()
 }

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <link rel="stylesheet" href="styles.css">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
+    
     <title>Acompanhamento de Progressões</title>
 </head>
 <body>
@@ -22,64 +22,56 @@
         </div>
     </header>
 
-        <!-- Tabela com items existentes -->
-        <section class="progressions">
-            <h1>Progressões</h1>
-            <table id="progTable">
-                <tr>
-                    <th>Código</th>
-                    <th>Descrição</th>
-                    <th>Ramo</th>
-                    <th>Etapa</th>
-                    <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
-                </tr>
-            </table>
-        </section>
-
-        <section class="newProgression">
-            <div class="progression">
-                <label for="newCode">Código no mAPPa:</label>
-                <input type="text" id="newCode" size= 4 minlength="2" maxlength="2" required>
-                <br><br>
-                <label for="newDescription">Descrição:</label>
-                <input type="text" id="newDescription" size= 100 minlength="10" maxlength="100" required>
-            </div>
-            <div class="branchphase">
-                <div class="proglobinho">
-                    <label class="progtitle">Ramo Lobinho</label><br>
-                    <input type="radio" id="ramolobinho1" name="newBranchAndPhase" value="Lobinho/Pata Tenra">
-                    <label for="ramolobinho1">Pata Tenra</label><br>
-                    <input type="radio" id="ramolobinho2" name="newBranchAndPhase" value="Lobinho/Lobo Saltador">
-                    <label for="ramolobinho2">Lobo Saltador</label><br>
-                    <input type="radio" id="ramolobinho3" name="newBranchAndPhase" value="Lobinho/Lobo Caçador">
-                    <label for="ramolobinho3">Lobo Caçador</label><br>
-                    <input type="radio" id="ramolobinho4" name="newBranchAndPhase" value="Lobinho/Lobo Rastreador">
-                    <label for="ramolobinho4">Lobo Rastreador</label>
-                </div>
-                    <div class="progescoteiro">
-                    <label class="progtitle">Ramo Escoteiro</label><br>
-                    <input type="radio" id="ramoescoteiro1" name="newBranchAndPhase" value="Escoteiro/Pistas">
-                    <label for="ramoescoteiro1">Pistas</label><br>
-                    <input type="radio" id="ramoescoteiro2" name="newBranchAndPhase" value="Escoteiro/Trilha">
-                    <label for="ramoescoteiro2">Trilha</label><br>
-                    <input type="radio" id="ramoescoteiro3" name="newBranchAndPhase" value="Escoteiro/Rumo">
-                    <label for="ramoescoteiro3">Rumo</label><br>
-                    <input type="radio" id="ramoescoteiro4" name="newBranchAndPhase" value="Escoteiro/Travessia">
-                    <label for="ramoescoteiro4">Travessia</label>
-                </div>
-                <div class="progsenior">
-                    <label class="progtitle">Ramo Senior</label><br>
-                    <input type="radio" id="ramosenior1" name="newBranchAndPhase" value="Senior/Escalada">
-                    <label for="ramosenior1">Escalada</label><br>
-                    <input type="radio" id="ramosenior2" name="newBranchAndPhase" value="Senior/Conquista">
-                    <label for="ramosenior2">Conquista</label><br>
-                    <input type="radio" id="ramosenior3" name="newBranchAndPhase" value="Senior/Azimute">
-                    <label for="ramosenior3">Azimute</label>
-                </div>   
-            </div>
-            <button onclick="teste()" class="addBtn">Adicionar</button>
-        </section>
-        
+    <section class="newProgression">
+        <h1>Adicionar progressão</h1>
+        <div class="progression">
+            <label for="newCode">Código:</label>
+            <input type="text" inputmode="numeric" id="newCode" size="2">
+            <br><br>
+            <label for="newDescription">Descrição:</label>
+            <input type="text" id="newDescription" size= 100 minlength="10" maxlength="200">
+            <br><br>
+            <label for="newBranch">Ramo:</label>
+            <select name= "newBranch" id="newBranch">
+                <option value="Lobinho">Lobinho</option>
+                <option value="Escoteiro">Escoteiro</option>
+                <option value="Senior">Senior</option>
+            </select>
+            <label for="newPhase">Etapa:</label>
+            <select name= "newPhase" id="newPhase">
+                <option value="Pata Tenra">Pata Tenra</option>
+                <option value="Lobo Saltador">Lobo Saltador</option>
+                <option value="Lobo Caçador">Lobo Caçador</option>
+                <option value="Lobo Rastreador">Lobo Rastreador</option>
+                <option value="Pistas">Pistas</option>
+                <option value="Trilha">Trilha</option>
+                <option value="Rumo">Rumo</option>
+                <option value="Travessia">Travessia</option>
+                <option value="Escalada">Escalada</option>
+                <option value="Conquista">Conquista</option>
+                <option value="Azimute">Azimute</option>
+            </select>
+                    
+        <button onclick="newItem()" class="addBtn">Adicionar</button>
+        </div>
+    </section>
+    
+    <!-- Tabela com items existentes -->
+    <section class="progressions">
+        <h1>Progressões</h1>
+        <table id="progTable">
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Ramo</th>
+                <th>Etapa</th>
+                <th><img src="https://cdn-icons-png.flaticon.com/512/126/126468.png" width="15px" height="15px"></th>
+            </tr>
+        </table>
+    </section>
+    
+    
+    
     <script src="scripts.js"></script>
 </body>
 </html>
